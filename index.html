@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0a0a0f">
-<title>NEXUS // DETECT</title>
+<title>NEX•US // DETECT</title>
 <link rel="icon" href="icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icons/favicon-512.png">
@@ -50,14 +50,14 @@ button.on{border-color:var(--g);color:var(--g)}
 <header>
   <div class="brand">
     <svg class="sigil" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0a0a0f"/><path d="M14 48 V16 H26 L38 36 V16 H50 V48 H38 L26 28 V48 Z" fill="none" stroke="#00ff87" stroke-width="3"/><circle cx="32" cy="32" r="5" fill="#ff0080"/></svg>
-    <div><div class="word">NEXUS</div><div class="sub">NExtended Xperimental USers</div></div>
+    <div><div class="word">NEX•US</div><div class="sub">NExtended Xperimental USers</div></div>
   </div>
   <div class="chip">DoubleA · AntManThePro</div>
 </header>
 <div class="layout">
   <div class="stage" id="stage">
     <canvas id="c"></canvas>
-    <div class="hud"><div class="pill" id="src">detector on public KEV snapshot 2026.10.02</div></div>
+    <div class="hud"><div class="pill" id="src">detector on public KEV snapshot 2026.11.18</div></div>
   </div>
   <aside class="pane">
     <div class="bar">
@@ -72,25 +72,25 @@ button.on{border-color:var(--g);color:var(--g)}
     </div>
   </aside>
 </div>
-<footer style="padding:6px 12px;border-top:1px solid var(--line);font-size:9px;color:#666;line-height:1.5">🐜 Field note from DoubleA: this detector caught 14 CVEs and zero feelings. <span style="color:#555">Fine print: the snapshot is from Oct 2026, the jokes are from the field, and "not perfect, just real" is the whole QA policy — patch the edge boxes first, argue about the score later.</span></footer>
+<footer style="padding:6px 12px;border-top:1px solid var(--line);font-size:9px;color:#666;line-height:1.5">🐜 Field note from DoubleA: this detector caught 14 CVEs and zero feelings. <span style="color:#555">Fine print: the snapshot is from Nov 2026, the jokes are from the field, and "not perfect, just real" is the whole QA policy — patch the edge boxes first, argue about the score later.</span></footer>
 <script>
 const SNAPSHOT = [
-  {cve:"CVE-2026-102490", vendor:"Zammad", product:"Zammad", name:"Improper privilege management", date:"2026-10-02", ransomware:false},
-  {cve:"CVE-2026-102489", vendor:"Zammad", product:"Zammad", name:"Session fixation", date:"2026-10-02", ransomware:false},
-  {cve:"CVE-2026-104286", vendor:"Fortinet", product:"FortiMail", name:"Path traversal", date:"2026-10-01", ransomware:false},
-  {cve:"CVE-2026-76504", vendor:"Cisco", product:"Catalyst SD-WAN Manager", name:"Hex encoding flaw", date:"2026-09-30", ransomware:false},
-  {cve:"CVE-2026-86950", vendor:"Apple", product:"iOS / macOS", name:"CoreGraphics out-of-bounds write", date:"2026-09-29", ransomware:false},
-  {cve:"CVE-2026-88772", vendor:"Citrix", product:"NetScaler", name:"Memory-bounds restriction", date:"2026-09-27", ransomware:false},
-  {cve:"CVE-2026-88771", vendor:"Citrix", product:"NetScaler", name:"Improper input validation", date:"2026-09-27", ransomware:false},
-  {cve:"CVE-2026-67279", vendor:"MikroTik", product:"RouterOS", name:"Workflow enforcement flaw", date:"2026-09-25", ransomware:false},
-  {cve:"CVE-2026-65660", vendor:"Microsoft", product:"SharePoint", name:"Code injection", date:"2026-09-25", ransomware:false},
-  {cve:"CVE-2026-87902", vendor:"WordPress", product:"Core", name:"Remote file inclusion", date:"2026-09-25", ransomware:false},
-  {cve:"CVE-2026-5430", vendor:"WSO2", product:"API Manager", name:"Path traversal", date:"2026-09-24", ransomware:false},
-  {cve:"CVE-2026-71362", vendor:"Adobe", product:"Commerce", name:"Incorrect authorization", date:"2026-09-24", ransomware:false},
-  {cve:"CVE-2026-93952", vendor:"Arista", product:"VeloCloud", name:"Improper input validation", date:"2026-09-22", ransomware:false},
-  {cve:"CVE-2026-94127", vendor:"F5", product:"BIG-IP APM", name:"Heap buffer overflow", date:"2026-09-22", ransomware:false}
+  {cve:"CVE-2024-10441", vendor:"Synology", product:"DiskStation Manager (DSM)", name:"Improper output encoding", date:"2026-11-18", ransomware:false},
+  {cve:"CVE-2026-40217", vendor:"BerriAI", product:"LiteLLM", name:"Unprotected alternate channel", date:"2026-11-18", ransomware:false},
+  {cve:"CVE-2026-90817", vendor:"Vanderbilt University", product:"Research Electronic Data Capture (REDCap)", name:"Code injection", date:"2026-11-18", ransomware:false},
+  {cve:"CVE-2026-90436", vendor:"Apache", product:"Axis", name:"Unsafe reflection", date:"2026-11-18", ransomware:false},
+  {cve:"CVE-2026-115731", vendor:"Perforce", product:"Puppet Enterprise", name:"Deserialization of untrusted data", date:"2026-11-17", ransomware:false},
+  {cve:"CVE-2026-114713", vendor:"UnrealIRCd", product:"UnrealIRCd", name:"Improper neutralization of delimiters", date:"2026-11-13", ransomware:false},
+  {cve:"CVE-2026-123039", vendor:"Check Point", product:"Multiple Products", name:"Incorrect permission assignment", date:"2026-11-13", ransomware:false},
+  {cve:"CVE-2026-124194", vendor:"Microsoft", product:"Office", name:"Missing user interaction for unsafe action", date:"2026-11-10", ransomware:false},
+  {cve:"CVE-2026-111793", vendor:"Openwave Messaging Limited", product:"Webtop Media Transcoder", name:"Incorrect resource transfer", date:"2026-11-10", ransomware:false},
+  {cve:"CVE-2026-20320", vendor:"Cisco", product:"BroadWorks", name:"XML external entity flaw", date:"2026-11-10", ransomware:false},
+  {cve:"CVE-2026-111560", vendor:"Barracuda Networks", product:"Multiple Products", name:"OS command injection", date:"2026-11-10", ransomware:false},
+  {cve:"CVE-2026-116606", vendor:"Barracuda Networks", product:"Barracuda Email Security Gateway (ESG)", name:"Authentication bypass", date:"2026-11-10", ransomware:false},
+  {cve:"CVE-2026-125350", vendor:"Google", product:"Chromium", name:"Use-after-free", date:"2026-11-10", ransomware:false},
+  {cve:"CVE-2026-102895", vendor:"GPUStack", product:"GPUStack", name:"Improper authentication", date:"2026-11-09", ransomware:false}
 ];
-const AS_OF = "2026-10-04";
+const AS_OF = "2026-11-18";
 let rows = SNAPSHOT.slice();
 let hits = [];
 const canvas = document.getElementById('c');
@@ -176,7 +176,7 @@ async function tryLive(){
     document.getElementById('src').textContent = "LIVE CISA KEV " + (data.catalogVersion||"") + " · detector running";
     detect(rows);
   }catch(e){
-    document.getElementById('src').textContent = "live blocked · detector on KEV snapshot 2026.10.02";
+    document.getElementById('src').textContent = "live blocked · detector on KEV snapshot 2026.11.18";
     rows = SNAPSHOT; detect(rows);
   }
 }
