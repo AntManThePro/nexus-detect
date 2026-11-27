@@ -57,7 +57,7 @@ button.on{border-color:var(--g);color:var(--g)}
 <div class="layout">
   <div class="stage" id="stage">
     <canvas id="c"></canvas>
-    <div class="hud"><div class="pill" id="src">detector on public KEV snapshot 2026.11.18</div></div>
+    <div class="hud"><div class="pill" id="src">detector on public KEV snapshot 2026.11.25</div></div>
   </div>
   <aside class="pane">
     <div class="bar">
@@ -72,25 +72,21 @@ button.on{border-color:var(--g);color:var(--g)}
     </div>
   </aside>
 </div>
-<footer style="padding:6px 12px;border-top:1px solid var(--line);font-size:9px;color:#666;line-height:1.5">🐜 Field note from DoubleA: this detector caught 14 CVEs and zero feelings. <span style="color:#555">Fine print: the snapshot is from Nov 2026, the jokes are from the field, and "not perfect, just real" is the whole QA policy — patch the edge boxes first, argue about the score later.</span></footer>
+<footer style="padding:6px 12px;border-top:1px solid var(--line);font-size:9px;color:#666;line-height:1.5">🐜 Field note from DoubleA: this detector caught 10 CVEs and zero feelings. <span style="color:#555">Fine print: the snapshot is from Nov 2026, the jokes are from the field, and "not perfect, just real" is the whole QA policy — patch the edge boxes first, argue about the score later.</span></footer>
 <script>
 const SNAPSHOT = [
-  {cve:"CVE-2024-10441", vendor:"Synology", product:"DiskStation Manager (DSM)", name:"Improper output encoding", date:"2026-11-18", ransomware:false},
-  {cve:"CVE-2026-40217", vendor:"BerriAI", product:"LiteLLM", name:"Unprotected alternate channel", date:"2026-11-18", ransomware:false},
-  {cve:"CVE-2026-90817", vendor:"Vanderbilt University", product:"Research Electronic Data Capture (REDCap)", name:"Code injection", date:"2026-11-18", ransomware:false},
-  {cve:"CVE-2026-90436", vendor:"Apache", product:"Axis", name:"Unsafe reflection", date:"2026-11-18", ransomware:false},
-  {cve:"CVE-2026-115731", vendor:"Perforce", product:"Puppet Enterprise", name:"Deserialization of untrusted data", date:"2026-11-17", ransomware:false},
-  {cve:"CVE-2026-114713", vendor:"UnrealIRCd", product:"UnrealIRCd", name:"Improper neutralization of delimiters", date:"2026-11-13", ransomware:false},
-  {cve:"CVE-2026-123039", vendor:"Check Point", product:"Multiple Products", name:"Incorrect permission assignment", date:"2026-11-13", ransomware:false},
-  {cve:"CVE-2026-124194", vendor:"Microsoft", product:"Office", name:"Missing user interaction for unsafe action", date:"2026-11-10", ransomware:false},
-  {cve:"CVE-2026-111793", vendor:"Openwave Messaging Limited", product:"Webtop Media Transcoder", name:"Incorrect resource transfer", date:"2026-11-10", ransomware:false},
-  {cve:"CVE-2026-20320", vendor:"Cisco", product:"BroadWorks", name:"XML external entity flaw", date:"2026-11-10", ransomware:false},
-  {cve:"CVE-2026-111560", vendor:"Barracuda Networks", product:"Multiple Products", name:"OS command injection", date:"2026-11-10", ransomware:false},
-  {cve:"CVE-2026-116606", vendor:"Barracuda Networks", product:"Barracuda Email Security Gateway (ESG)", name:"Authentication bypass", date:"2026-11-10", ransomware:false},
-  {cve:"CVE-2026-125350", vendor:"Google", product:"Chromium", name:"Use-after-free", date:"2026-11-10", ransomware:false},
-  {cve:"CVE-2026-102895", vendor:"GPUStack", product:"GPUStack", name:"Improper authentication", date:"2026-11-09", ransomware:false}
+  {cve:"CVE-2026-103406", vendor:"HPE", product:"Juniper Session Smart Conductor and Session Smart Router", name:"OS command injection", date:"2026-11-25", ransomware:false, note:"What it is: a hole in Juniper Session Smart Conductor that lets a stranger run commands as root on it without logging in, using a crafted Salt ID. What it isn't: a flaw in a home router or a phone app, and DETECT can't tell you if your box is hit. What to do: upgrade the Conductor to 7.0.5, 7.1.7, or 7.2.3 before Nov 28. There is no workaround, so keep it off the open internet until it's patched."},
+  {cve:"CVE-2026-133469", vendor:"Vates", product:"Xen Orchestra", name:"Improper validation of input type", date:"2026-11-25", ransomware:false, note:"What it is: a login check in Xen Orchestra that can be tricked with a fake token, so a stranger can act as an admin. What it isn't: a break-in to the virtual machines themselves. What to do: install the Xen Orchestra fix Vates published before Nov 28, and keep the Orchestra login off the open internet until then."},
+  {cve:"CVE-2025-41450", vendor:"Danfoss", product:"AK-SM 800A Series", name:"Improper authentication", date:"2026-11-25", ransomware:false, note:"What it is: a login check in the Danfoss AK-SM 800A refrigeration controller that lets a stranger pull a report leaking internal addresses, usernames, and store names. What it isn't: a way to change temperatures or shut off cooling, and it isn't about a home fridge. What to do: patch the controller with the fix Danfoss published before Dec 9, and keep these controllers off the open internet."},
+  {cve:"CVE-2023-25914", vendor:"Danfoss", product:"AK-SM 800A Series", name:"Path traversal", date:"2026-11-25", ransomware:false, note:"What it is: a path trick that lets an attacker read server files through the AK-SM 800A's XML interface. What it isn't: a way to run commands or change settings on its own. What to do: patch the controller with the fix Danfoss published before Nov 28, and keep it off the open internet."},
+  {cve:"CVE-2023-25915", vendor:"Danfoss", product:"AK-SM 800A Series", name:"Improper input validation", date:"2026-11-25", ransomware:false, note:"What it is: a bad input check that lets a remote attacker run commands on the AK-SM 800A controller. What it isn't: a phone or laptop problem. It only matters if you run these refrigeration controllers. What to do: patch the controller with the fix Danfoss published before Nov 28, and keep it off the open internet."},
+  {cve:"CVE-2026-133324", vendor:"Mitel", product:"MiCollab", name:"Not failing securely", date:"2026-11-25", ransomware:false, note:"What it is: a check in MiCollab's conferencing part that lets a stranger through when it should stop them, so they can act without logging in. What it isn't: a flaw in your phone calls or your laptop. It only matters if you run MiCollab. What to do: apply Mitel's patch for MiCollab before Nov 28, and keep MiCollab off the open internet until then."},
+  {cve:"CVE-2026-133275", vendor:"Mitel", product:"MiCollab", name:"Unrestricted file upload", date:"2026-11-25", ransomware:false, note:"What it is: a file upload check in MiCollab's conferencing part that lets a stranger upload any file they want. What it isn't: a way to read your messages on its own, and it isn't about your phone. What to do: apply Mitel's patch for MiCollab before Nov 28, and keep MiCollab off the open internet until then."},
+  {cve:"CVE-2026-133311", vendor:"Mitel", product:"MiCollab", name:"Weak authentication", date:"2026-11-25", ransomware:false, note:"What it is: a weak login check in MiCollab's conferencing part that lets a stranger get at sensitive info using a system-made ID or planted content. What it isn't: a bug in your phone or your laptop. It only matters if you run MiCollab. What to do: apply Mitel's patch for MiCollab before Dec 9, and keep MiCollab off the open internet until then."},
+  {cve:"CVE-2026-133303", vendor:"Mitel", product:"MiCollab", name:"XML injection", date:"2026-11-25", ransomware:false, note:"What it is: an XML trick in MiCollab's conferencing part that lets a stranger run commands using planted content. What it isn't: a virus on your computer, and it isn't about your phone. What to do: apply Mitel's patch for MiCollab before Nov 28, and keep MiCollab off the open internet until then."},
+  {cve:"CVE-2026-133323", vendor:"Mitel", product:"MiCollab", name:"OS command injection", date:"2026-11-25", ransomware:false, note:"What it is: a command hole in MiCollab's conferencing part that lets a stranger run system commands without logging in. What it isn't: a flaw in your phone or your laptop. It only matters if you run MiCollab. What to do: apply Mitel's patch for MiCollab before Nov 28, and keep MiCollab off the open internet until then."}
 ];
-const AS_OF = "2026-11-18";
+const AS_OF = "2026-11-25";
 let rows = SNAPSHOT.slice();
 let hits = [];
 const canvas = document.getElementById('c');
@@ -119,13 +115,16 @@ function detect(list){
     }
   });
   hits.sort((a,b)=> b.score - a.score);
+  // Juniper CVE-2026-103406 leads the list: the Nov 25 batch's critical root RCE, due Nov 28. Scores and counts above are untouched.
+  const jLead = hits.findIndex(h=>h.cve==="CVE-2026-103406");
+  if(jLead>0){ hits.unshift(hits.splice(jLead,1)[0]); }
   document.getElementById('rules').innerHTML = [
     ["FRESH", rules.fresh], ["CLUSTER", rules.cluster], ["EDGE", rules.edge], ["HITS", hits.length]
   ].map(([k,n])=>`<div class="rule"><b>${n}</b>${k}</div>`).join("");
   document.getElementById('list').innerHTML = hits.map(h=>`
     <div class="item">
       <div class="tag">+${h.score}<div class="meta">${h.age}d</div></div>
-      <div><div class="title">${h.cve} · ${h.vendor} ${h.product}</div><div class="meta">${h.name} — ${h.reasons.join(" · ")}</div></div>
+      <div><div class="title">${h.cve} · ${h.vendor} ${h.product}</div><div class="meta">${h.name} — ${h.reasons.join(" · ")}</div>${h.note?`<div class="meta" style="color:#a8a8c0;line-height:1.45;margin-top:3px">${h.note}</div>`:""}</div>
     </div>`).join("") || `<div class="item"><div class="tag">CLEAR</div><div class="title">No rule hits</div></div>`;
   document.getElementById('stats').textContent = hits.length + " hits";
   hits.slice(0,4).forEach((_,i)=> setTimeout(pulse, i*180));
@@ -176,7 +175,7 @@ async function tryLive(){
     document.getElementById('src').textContent = "LIVE CISA KEV " + (data.catalogVersion||"") + " · detector running";
     detect(rows);
   }catch(e){
-    document.getElementById('src').textContent = "live blocked · detector on KEV snapshot 2026.11.18";
+    document.getElementById('src').textContent = "live blocked · detector on KEV snapshot 2026.11.25";
     rows = SNAPSHOT; detect(rows);
   }
 }
